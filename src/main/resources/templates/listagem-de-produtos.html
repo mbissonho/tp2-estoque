@@ -6,6 +6,8 @@
 
  <link rel="stylesheet" type="text/css" media="all" 
           th:href="@{/css/vendor/bootstrap.min.css}" />
+ <link rel="stylesheet" type="text/css" media="all" 
+ th:href="@{/css/style.css}" />
 
 </head>
 <body>
@@ -13,7 +15,30 @@
 <div class="container">
     <h1 class="text-center my-3">Listagem de produtos</h1>
 
-    <table class="table table-hover my-5">
+	<form id="lista_de_produtos_form" th:action="@{/listagemPorSaldoMinimo}" method="GET" class="my-5">
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="fabricantes">Fabricantes</label>
+				<select name="fabricante" class="form-control">
+				  <option value="0" th:selected="${#httpServletRequest.getParameter('fabricante') == 0}">Todos</option>
+				  <th:block th:each="fab : ${fabricantes}">
+				  	<option th:value="${fab.id}" th:text="${fab.nome}" th:selected="${#httpServletRequest.getParameter('fabricante') == fab.id}"></option>
+				  </th:block>
+				</select>
+			</div>
+			<div class="form-group col-md-6">
+				<label for="categorias">Categorias</label>
+				<select name="categoria" class="form-control">
+				  <option value="0" th:selected="${#httpServletRequest.getParameter('categoria') == 0}">Todas</option>
+				  <th:block th:each="cat : ${categorias}">
+				  	<option th:value="${cat.id}" th:text="${cat.nome}" th:selected="${#httpServletRequest.getParameter('categoria') == cat.id}"></option>
+				  </th:block>
+				</select>
+			</div>
+		</div>
+	</form>
+
+    <table class="table table-hover mt-2 mb-5">
         <thead>
             <tr>
             	<th> Código </th>
@@ -38,13 +63,16 @@
             </tr>
         </tbody>
     </table>
-
-	<button class="btn btn-primary">Listagem de saldo mínimo</button>
-
+	<button id="listagem_de_saldo_minimo_btn" class="btn btn-primary">Listagem de saldo mínimo</button>
 </div>
 
 
 
-
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"></script>
+  <script th:src="@{/js/vendor/bootstrap.min.js}"></script>
+  <script th:src="@{/js/form.js}"></script>
 </body>
 </html>
