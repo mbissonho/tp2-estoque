@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Listagem de Produtos</title>
+
+ <link rel="stylesheet" type="text/css" media="all" 
+          th:href="@{/css/vendor/bootstrap.min.css}" />
+
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center my-3">Listagem de produtos</h1>
+
+    <table class="table table-hover my-5">
+        <thead>
+            <tr>
+            	<th> Código </th>
+                <th> Nome </th>
+                <th> Fabricante</th>
+                <th> Saldo </th>
+                <th> Saldo Minimo </th>
+                <th> Categoria </th>
+            </tr>
+        </thead>
+        <tbody>
+       	    <tr th:if="${produtos.empty}">
+                <td colspan="2"> Sem produtos </td>
+            </tr>
+            <tr th:each="prod : ${produtos}">
+            	<td th:text="${prod.id}"></td>
+                <td th:text="${prod.nome}"></td>
+                <td th:text="${prod.fabricante.nome}"></td>
+                <td th:text="${prod.saldo}"></td>
+                <td th:text="${prod.saldoMinimo}"></td>
+                <td th:text="${prod.categoria.nome}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+	<button class="btn btn-primary">Listagem de saldo mínimo</button>
+
+</div>
+
+
+
+
+</body>
+</html>
