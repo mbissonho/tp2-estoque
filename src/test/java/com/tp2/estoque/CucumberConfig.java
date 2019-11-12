@@ -9,7 +9,10 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "classpath:features", plugin = {"pretty"}, snippets = SnippetType.UNDERSCORE)
+@CucumberOptions(features = "classpath:features", 
+plugin = {"pretty"}, 
+snippets = SnippetType.UNDERSCORE
+)
 public class CucumberConfig {
 
 }

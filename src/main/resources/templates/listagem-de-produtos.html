@@ -61,7 +61,7 @@
         </thead>
         <tbody>
        	    <tr th:if="${produtos.empty}">
-                <td colspan="2"> Sem produtos </td>
+                <td colspan="2">Sem produtos</td>
             </tr>
             <tr th:each="prod : ${produtos}">
             	<td th:text="${prod.id}"></td>
