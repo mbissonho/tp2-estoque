@@ -31,8 +31,6 @@ public class EstoqueController {
 		
 		this.addCommons(model, mv, filtro);
 		
-		
-		
 		return mv;
 	}
 	

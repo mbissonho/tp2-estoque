@@ -47,8 +47,6 @@ public class ProdutoRepositoryImpl implements ProdutoQueries {
 			);
 		}
 		
-	
-		
 		if(filtro.getFabricante() != null) {
 			predicates.add(
 				builder.equal(root.get("fabricante"), filtro.getFabricante())	
