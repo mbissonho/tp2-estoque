@@ -15,23 +15,32 @@
 <div class="container">
     <h1 class="text-center my-3">Listagem de produtos</h1>
 
-	<form id="lista_de_produtos_form" th:action="@{/listagemPorSaldoMinimo}" method="GET" class="my-5">
+	<form id="lista_de_produtos_form" th:object="${filtro}" th:action="@{/listagemPorSaldoMinimo}" method="GET" class="my-5">
 		<div class="form-row">
-			<div class="form-group col-md-6">
-				<label for="fabricantes">Fabricantes</label>
-				<select name="fabricante" class="form-control">
-				  <option value="0" th:selected="${#httpServletRequest.getParameter('fabricante') == 0}">Todos</option>
-				  <th:block th:each="fab : ${fabricantes}">
-				  	<option th:value="${fab.id}" th:text="${fab.nome}" th:selected="${#httpServletRequest.getParameter('fabricante') == fab.id}"></option>
+			<div class="form-group col-md-4">
+				<label for="margens">Margem do saldo mínimo</label>
+				<select id="margens" name="margem" class="form-control" th:field="*{margem}">
+					<option value="0" th:selected="${#httpServletRequest.getParameter('margem') == 0}">0</option>
+				  <th:block th:each="mar : ${margens}">
+				  	<option th:value="${mar}" th:text="${mar}" th:selected="${#httpServletRequest.getParameter('margem') == mar}"></option>
 				  </th:block>
 				</select>
 			</div>
-			<div class="form-group col-md-6">
+			<div class="form-group col-md-4">
+				<label for="fabricantes">Fabricantes</label>
+				<select id="fabricantes" name="fabricante" class="form-control" th:field="*{fabricante}">
+				  <option value="0">Todos</option>
+				  <th:block th:each="fab : ${fabricantes}">
+				  	<option th:value="${fab.id}" th:text="${fab.nome}"></option>
+				  </th:block>
+				</select>
+			</div>
+			<div class="form-group col-md-4">
 				<label for="categorias">Categorias</label>
-				<select name="categoria" class="form-control">
-				  <option value="0" th:selected="${#httpServletRequest.getParameter('categoria') == 0}">Todas</option>
+				<select id="categorias" name="categoria" class="form-control" th:field="*{categoria}">
+				  <option value="0">Todas</option>
 				  <th:block th:each="cat : ${categorias}">
-				  	<option th:value="${cat.id}" th:text="${cat.nome}" th:selected="${#httpServletRequest.getParameter('categoria') == cat.id}"></option>
+				  	<option th:value="${cat.id}" th:text="${cat.nome}"></option>
 				  </th:block>
 				</select>
 			</div>
@@ -46,6 +55,7 @@
                 <th> Fabricante</th>
                 <th> Saldo </th>
                 <th> Saldo Minimo </th>
+                <th> Giro Dia </th>
                 <th> Categoria </th>
             </tr>
         </thead>
@@ -59,6 +69,7 @@
                 <td th:text="${prod.fabricante.nome}"></td>
                 <td th:text="${prod.saldo}"></td>
                 <td th:text="${prod.saldoMinimo}"></td>
+                <td th:text="${prod.giroDia}"></td>
                 <td th:text="${prod.categoria.nome}"></td>
             </tr>
         </tbody>

@@ -29,6 +29,8 @@ public class Produto {
 	private Integer saldo;
 	
 	private Integer saldoMinimo;
+	
+	private Integer giroDia;
 
 	public Long getId() {
 		return id;
@@ -76,6 +78,14 @@ public class Produto {
 
 	public void setSaldoMinimo(Integer saldoMinimo) {
 		this.saldoMinimo = saldoMinimo;
+	}
+
+	public Integer getGiroDia() {
+		return giroDia;
+	}
+
+	public void setGiroDia(Integer giroDia) {
+		this.giroDia = giroDia;
 	}
 	
 }
