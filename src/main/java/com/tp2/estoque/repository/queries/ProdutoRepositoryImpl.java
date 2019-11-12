@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
@@ -36,15 +37,17 @@ public class ProdutoRepositoryImpl implements ProdutoQueries {
 	private Predicate[] criarRestricoes(ListagemPorSaldoMinimo filtro, CriteriaBuilder builder, Root<Produto> root) {
 		List<Predicate> predicates = new ArrayList<>();
 		
-		/*
-		
 		if(filtro.getMargem() != null) {
+			
+			Expression<Integer> saldoMinimoExp = root.get("saldoMinimo"); 
+			Expression<Integer> sum = builder.sum(saldoMinimoExp, filtro.getMargem());
+			
 			predicates.add(
-				builder.equal(root.get("margem"), filtro.getMargem())	
+				builder.lessThanOrEqualTo(root.get("saldo"), sum)
 			);
 		}
 		
-		*/
+	
 		
 		if(filtro.getFabricante() != null) {
 			predicates.add(
