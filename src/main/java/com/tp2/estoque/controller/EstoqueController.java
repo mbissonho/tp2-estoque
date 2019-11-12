@@ -29,13 +29,9 @@ public class EstoqueController {
 	public ModelAndView ListagemDeProdutos(ListagemPorSaldoMinimo filtro, Model model){
 		ModelAndView mv = new ModelAndView("listagem-de-produtos.html");
 		
-		model.addAttribute("filtro", filtro);
+		this.addCommons(model, mv, filtro);
 		
-		mv.addObject("margens", new String[] {"1", "2", "4", "8", "16", "32"});
 		
-		mv.addObject("produtos", repository.findAll());
-		mv.addObject("categorias", categoriaRepository.findAll());
-		mv.addObject("fabricantes", fabricanteRepository.findAll());
 		
 		return mv;
 	}
@@ -44,16 +40,23 @@ public class EstoqueController {
 	public ModelAndView listagemPorSaldoMinimo(ListagemPorSaldoMinimo filtro, Model model){
 		ModelAndView mv = new ModelAndView("listagem-de-produtos.html");
 		
-		model.addAttribute("filtro", filtro);
-		
-		mv.addObject("margens", new String[] {"1", "2", "4", "8", "16", "32"});
-		
-		mv.addObject("categorias", categoriaRepository.findAll());
-		mv.addObject("fabricantes", fabricanteRepository.findAll());
+		this.addCommons(model, mv, filtro);
 		
 		mv.addObject("produtos", repository.filtroPorSaldoMinimo(filtro));
 				
 		return mv;
 	}
 	
+	
+	private void addCommons(Model model, ModelAndView mv, ListagemPorSaldoMinimo filtro) {
+		
+		model.addAttribute("filtro", filtro);
+		
+		mv.addObject("margens", new String[] {"1", "2", "4", "8", "16", "32"});
+		
+		mv.addObject("produtos", repository.findAll());
+		mv.addObject("categorias", categoriaRepository.findAll());
+		mv.addObject("fabricantes", fabricanteRepository.findAll());
+		
+	}
 }

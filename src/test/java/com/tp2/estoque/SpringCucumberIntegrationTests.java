@@ -1,18 +1,14 @@
 package com.tp2.estoque;
 
 import org.junit.Ignore;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@ExtendWith(SpringExtension.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @Ignore
 public class SpringCucumberIntegrationTests {
 
-	protected RestTemplate restTemplate = new RestTemplate();
-
-    protected final String DEFAULT_URL = "http://localhost:8080/";
 	
 }
