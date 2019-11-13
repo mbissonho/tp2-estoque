@@ -65,7 +65,11 @@
                 <td colspan="2">Sem produtos</td>
             </tr>
             <tr th:each="prod : ${produtos}">
-            	<td th:if="${enableSelect}"> <input class="form-control" type="checkbox" /> </td>
+            	<td th:if="${enableSelect}">
+            		<div class="form-check">
+            			<input class="form-check-input" type="checkbox" />
+            		</div>
+           		</td>
             	<td th:text="${prod.id}"></td>
                 <td th:text="${prod.nome}"></td>
                 <td th:text="${prod.fabricante.nome}"></td>

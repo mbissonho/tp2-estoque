@@ -11,8 +11,8 @@ Feature: listagem_de_produtos_com_saldo_minimo
 	
 	Examples:
 		| margem | fabricante | categoria | linha | coluna | valor |
-		| 0 | Todos | Todas | 1 | 1 | 3 | 
-		| 4 | Todos | Todas | 2 | 1 | 4 |
+		| 0 | Todos | Todas | 1 | 2 | 3 | 
+		| 4 | Todos | Todas | 2 | 2 | 4 |
 		| 0 | Fabrimar | Todas | 1 | 1 | Sem produtos |
 		| 0 | Todos | Chuveiro | 1 | 1 | Sem produtos |   
 		
