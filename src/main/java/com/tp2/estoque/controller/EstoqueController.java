@@ -31,6 +31,9 @@ public class EstoqueController {
 		
 		this.addCommons(model, mv, filtro);
 		
+		mv.addObject("produtos", repository.findAll());
+		mv.addObject("enableSelect", false);
+		
 		return mv;
 	}
 	
@@ -41,7 +44,8 @@ public class EstoqueController {
 		this.addCommons(model, mv, filtro);
 		
 		mv.addObject("produtos", repository.filtroPorSaldoMinimo(filtro));
-				
+		mv.addObject("enableSelect", true);
+		
 		return mv;
 	}
 	
@@ -51,8 +55,6 @@ public class EstoqueController {
 		model.addAttribute("filtro", filtro);
 		
 		mv.addObject("margens", new String[] {"1", "2", "4", "8", "16", "32"});
-		
-		mv.addObject("produtos", repository.findAll());
 		mv.addObject("categorias", categoriaRepository.findAll());
 		mv.addObject("fabricantes", fabricanteRepository.findAll());
 		

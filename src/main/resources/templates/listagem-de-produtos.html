@@ -50,6 +50,7 @@
     <table class="table table-hover mt-2 mb-5">
         <thead>
             <tr>
+            	<th th:if="${enableSelect}"> Selecionar </th>
             	<th> Código </th>
                 <th> Nome </th>
                 <th> Fabricante</th>
@@ -64,6 +65,7 @@
                 <td colspan="2">Sem produtos</td>
             </tr>
             <tr th:each="prod : ${produtos}">
+            	<td th:if="${enableSelect}"> <input class="form-control" type="checkbox" /> </td>
             	<td th:text="${prod.id}"></td>
                 <td th:text="${prod.nome}"></td>
                 <td th:text="${prod.fabricante.nome}"></td>
