@@ -1,11 +1,12 @@
 package com.tp2.estoque;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -13,7 +14,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class SaldoMinimoSteps extends SpringCucumberContextLoader {
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+public class SaldoMinimoStepDefinitions {
 
 	private WebDriver firefoxDriver;
 	
