@@ -2,7 +2,11 @@
 #
 # Check https://circleci.com/docs/2.0/language-java/ for more details
 #
-version: 2
+version: 2.1
+orbs:
+  browser-tools: circleci/browser-tools@0.1.3
+    commands:
+        install-firefox: browser-tools/install-firefox
 jobs:
   build:
     docker:
@@ -22,6 +26,8 @@ jobs:
 
     steps:
       - checkout
+      - install-firefox
+      
 
       # Download and cache dependencies
       - restore_cache:
