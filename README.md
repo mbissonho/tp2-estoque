@@ -17,7 +17,7 @@ Projeto simples usado na disciplina de Testes
 
 `$ cd target/`
 
-3. Rode a aplicação que estará escutando em localhost:3000
+3. Rode a aplicação que estará escutando em localhost:8282
 
 `$ java -jar estoque-0.0.1-SNAPSHOT.jar`
 
