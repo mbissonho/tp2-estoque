@@ -1,4 +1,4 @@
-# cgl-visualizer-js
+# tp2-estoque
 [![CircleCI](https://circleci.com/gh/mbissonho/tp2-estoque.svg?style=svg)](https://circleci.com/gh/mbissonho/tp2-estoque)
   
 Projeto simples usado na disciplina de Testes
