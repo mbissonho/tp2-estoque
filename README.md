@@ -1,7 +1,8 @@
 # tp2-estoque
 [![CircleCI](https://circleci.com/gh/mbissonho/tp2-estoque.svg?style=svg)](https://circleci.com/gh/mbissonho/tp2-estoque)
   
-Projeto simples usado na disciplina de Testes
+Projeto simples da disciplina de Testes usado para demonstrar a utilização do framework Java Spring com Thymeleaf como template engine, 
+para a criação de uma aplicação simples com testes de BDD.
 
 - A aplicação demonstra uma simples listagem de produtos com saldo mínimo em estoque filtrando por Categoria 
 e Fabricante do produto.
@@ -11,7 +12,7 @@ para a listagem dos produtos que estão próximos de saldo mínimo em estoque.
 
 - A aplicação criará um banco de dados H2 em memória.
 
-- Os testes de validação com Cucumber/Selenium irão ativar o Firefox em mode headless, dessa forma a janela do navegador NÃO abrirá durante os mesmos.
+- Os testes de BDD com Cucumber/Selenium irão ativar o Firefox em mode headless, dessa forma a janela do navegador NÃO abrirá durante os mesmos.
 
 ## Para executar:
 
