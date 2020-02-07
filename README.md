@@ -4,6 +4,8 @@
 Projeto simples da disciplina de Testes usado para demonstrar a utilização do framework Java Spring com Thymeleaf como template engine, 
 para a criação de uma aplicação simples com testes de BDD.
 
+[Demonstração](https://tp2-estoque.herokuapp.com)
+
 - A aplicação demonstra uma simples listagem de produtos com saldo mínimo em estoque filtrando por Categoria 
 e Fabricante do produto.
 
