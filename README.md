@@ -31,4 +31,4 @@ para a listagem dos produtos que estão próximos de saldo mínimo em estoque.
 
 1. Maven 3.6.0
 2. Jdk 1.8.0_231-b11
-3. Firefox
+3. Firefox 72.0.2
