@@ -3,6 +3,12 @@
   
 Projeto simples usado na disciplina de Testes
 
+- A aplicação demonstra uma simples listagem de produtos com saldo mínimo em estoque filtrando por Categoria 
+e Fabricante do produto.
+
+- É possível também listar adicionando o critério de margem cujo valor será somado ao saldo mínimo de determinado produto 
+para a listagem dos produtos que estão próximos de saldo mínimo em estoque.
+
 - A aplicação criará um banco de dados H2 em memória.
 
 - Os testes de validação com Cucumber/Selenium irão ativar o Firefox em mode headless, dessa forma a janela do navegador NÃO abrirá durante os mesmos.
