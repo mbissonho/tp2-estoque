@@ -14,7 +14,7 @@ para a listagem dos produtos que estão próximos de saldo mínimo em estoque.
 
 - A aplicação criará um banco de dados H2 em memória.
 
-- Os testes de BDD com Cucumber/Selenium irão ativar o Firefox em mode headless, dessa forma a janela do navegador NÃO abrirá durante os mesmos.
+- Os testes de BDD com Cucumber/Selenium irão ativar o Firefox em mode headless por padrão, dessa forma a janela do navegador NÃO abrirá durante os mesmos.
 
 ## Para executar:
 
@@ -35,6 +35,10 @@ para a listagem dos produtos que estão próximos de saldo mínimo em estoque.
 1. Execute com o Maven instalado.
    
    `$ mvn test -e`
+
+2. Execute vendo os testes acontecerem no Firefox(modo headless desabilitado).
+
+    `$ mvn test -e -Denable-headless-mode=false`
 
 ### Para mais informações sobre essa abordagem de teste
 
