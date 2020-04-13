@@ -18,17 +18,27 @@ para a listagem dos produtos que estão próximos de saldo mínimo em estoque.
 
 ## Para executar:
 
-1. Faça o build/teste.
+1. Gere o jar.
 
-`$ mvn clean package`
+    `$ mvn clean package`
 
 2. Acesse o diretório /target.
 
-`$ cd target/`
+    `$ cd target/`
 
-3. Rode a aplicação que estará escutando em http://localhost:8282/
+3. Rode a aplicação que estará escutando em http://localhost:8282/.
 
-`$ java -jar estoque-0.0.1-SNAPSHOT.jar`
+    `$ java -jar estoque-0.0.1-SNAPSHOT.jar`
+
+### Para executar exclusivamente os testes: 
+
+1. Execute com o Maven instalado.
+   
+   `$ mvn test -e`
+
+### Para mais informações sobre essa abordagem de teste
+
+- [BDD](https://dannorth.net/introducing-bdd/)
 
 ## Ambiente:
 
