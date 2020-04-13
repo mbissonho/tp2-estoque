@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import io.cucumber.java.After;
@@ -18,10 +19,13 @@ import io.cucumber.java.en.When;
 public class SaldoMinimoStepDefinitions {
 
 	private WebDriver firefoxDriver;
+
+	@Value("${enable-headless-mode}")
+	private boolean enableHeadlessMode;
 	
 	@Before
 	public void setUp() {
-		BeforeSetupHelper.setUpFirefoxDriver();
+		BeforeSetupHelper.setUpFirefoxDriver(enableHeadlessMode);
 		this.firefoxDriver = BeforeSetupHelper.getFirefoxWebdriver();
 	}
 	

@@ -8,10 +8,10 @@ public class BeforeSetupHelper {
 
 	private static WebDriver firefoxWebdriver = null;
 	
-	public static void setUpFirefoxDriver() {
+	public static void setUpFirefoxDriver(boolean headlessModeEnabled) {
 		
 		FirefoxOptions options = new FirefoxOptions();
-		options.setHeadless(true);
+		options.setHeadless(headlessModeEnabled);
 		
 		System.setProperty("webdriver.gecko.driver","src/test/resources/geckodriver");
 		BeforeSetupHelper.firefoxWebdriver = (WebDriver) new FirefoxDriver(options);
